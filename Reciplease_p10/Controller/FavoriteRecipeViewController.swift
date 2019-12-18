@@ -32,10 +32,9 @@ final class FavoriteRecipeViewController: UIViewController {
         super.viewWillAppear(true)
         favoriteRecipeTableView.reloadData()
         guard coreDataManager?.favoritesRecipes.count == 0 else {
-            navigationItem.rightBarButtonItem = clearButton
+//            navigationItem.rightBarButtonItem = clearButton
             return
         }
-        navigationItem.rightBarButtonItem = nil
     }
     
     // MARK: - Segue
@@ -48,12 +47,19 @@ final class FavoriteRecipeViewController: UIViewController {
     
     // MARK: - Action
     @IBAction private func didTapClearButton(_ sender: Any) {
-        navigationItem.rightBarButtonItem = nil
-        alert(message: "delete all favorites")
-        coreDataManager?.deleteAllFavorites()
-        favoriteRecipeTableView.reloadData()
+         let alertUserDelete = UIAlertController(title: "Delete All ?", message: "Are you sure you want to delete all favorites ?", preferredStyle: .alert)
+               let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                    self.coreDataManager?.deleteAllFavorites()
+                self.favoriteRecipeTableView.reloadData()
+               })
+               let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+               }
+               alertUserDelete.addAction(ok)
+               alertUserDelete.addAction(cancel)
+               self.present(alertUserDelete, animated: true, completion: nil)
+           }
     }
-}
+
 
 // MARK: - TableView DataSource
 extension FavoriteRecipeViewController: UITableViewDataSource {

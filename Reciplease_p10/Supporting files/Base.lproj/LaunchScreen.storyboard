@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fridge" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-5U-7SI">
-                                <rect key="frame" x="87" y="368" width="240" height="160"/>
+                                <rect key="frame" x="117" y="378" width="180" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="Azc-xa-UT1"/>
-                                    <constraint firstAttribute="width" constant="240" id="tao-SE-agK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="Azc-xa-UT1"/>
+                                    <constraint firstAttribute="width" constant="180" id="tao-SE-agK"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Q2-5U-7SI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ALp-RV-XUo"/>
