@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,20 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fridge" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-HU-Teo">
-                                <rect key="frame" x="167" y="408" width="80" height="80"/>
-                                <color key="backgroundColor" red="0.2697753906" green="0.58454477790000003" blue="0.3527356982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fridge" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-5U-7SI">
+                                <rect key="frame" x="87" y="368" width="240" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="Fot-5u-S4l"/>
-                                    <constraint firstAttribute="height" constant="80" id="eGr-gf-dk4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="Azc-xa-UT1"/>
+                                    <constraint firstAttribute="width" constant="240" id="tao-SE-agK"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="K7S-HU-Teo" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5fW-QN-fbd"/>
-                            <constraint firstItem="K7S-HU-Teo" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RwZ-jN-4As"/>
+                            <constraint firstItem="6Q2-5U-7SI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ALp-RV-XUo"/>
+                            <constraint firstItem="6Q2-5U-7SI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KGg-Rl-O5b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

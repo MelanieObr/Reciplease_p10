@@ -50,7 +50,6 @@ class SearchRecipeViewController: UIViewController {
     
     @IBAction func didTapGoButton(_ sender: Any) {
         guard ingredients.count >= 1 else { return }
-        manageActivityIndicator(activityIndicator: searchActivityController, button: searchRecipesButton, showActivityIndicator: true)
         loadRecipes()
     }
     
@@ -66,6 +65,7 @@ class SearchRecipeViewController: UIViewController {
     //MARK: - Methods
     
     func loadRecipes() {
+        manageActivityIndicator(activityIndicator: searchActivityController, button: searchRecipesButton, showActivityIndicator: true)
         recipesService.getRecipes(ingredients: ingredients) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -75,9 +75,12 @@ class SearchRecipeViewController: UIViewController {
                     self.performSegue(withIdentifier: self.identifierSegue, sender: nil)
                 case .failure:
                     self.alert(message:"incorrect request")
+                   
                 }
+               self.manageActivityIndicator(activityIndicator: self.searchActivityController, button: self.searchRecipesButton, showActivityIndicator: false)
             }
         }
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

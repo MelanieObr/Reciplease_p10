@@ -21,6 +21,7 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
     /// method called to manage button and activity controller together: true to hide button and show acticity indicator / false to show button and hide activity controller
     func manageActivityIndicator(activityIndicator: UIActivityIndicatorView, button: UIButton, showActivityIndicator: Bool){
         activityIndicator.isHidden = !showActivityIndicator
@@ -35,7 +36,4 @@ func loadImageDataFromUrl(stringImageUrl: String) -> Data{
     return data
 }
 
-/// convert Int to a string
-func convertToString(value: Int) -> String {
-    return String(value)
-}
+

@@ -22,18 +22,18 @@ struct Hit: Decodable {
 
 //MARK: - Recipe
 struct Recipe: Decodable {
-    let label: String
-    let image: String
-    let url: String
-    let yield: Int
-    let ingredientLines: [String]
+    let label: String?
+    let image: String?
+    let url: String?
+    let yield: Int?
+    let ingredientLines: [String]?
     let ingredients: [Ingredient]
     let totalTime: Int?
 }
 
 //MARK: - Ingredients
 struct Ingredient: Decodable {
-    let text: String
+    let text: String?
 }
 
 //MARK: - RecipeDisplay
@@ -43,5 +43,5 @@ struct RecipeDisplay {
     let url: String?
     let ingredientLines: String?
     let totalTime: String?
-    let yield: Int
+    let yield: String?
 }

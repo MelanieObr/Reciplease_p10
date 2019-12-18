@@ -9,52 +9,77 @@
 import UIKit
 
 class RecipeTableViewCell: UITableViewCell {
-
+    
     //MARK: - Outlets
-        
-        @IBOutlet weak var recipeImageView: UIImageView!
-        @IBOutlet weak var titleLabel: UILabel!
-        @IBOutlet weak var yieldLabel: UILabel!
-        @IBOutlet weak var totalTimeLabel: UILabel!
-        @IBOutlet weak var ingredientLabel: UILabel!
-        
-        override func awakeFromNib() {
-                super.awakeFromNib()
-            }
-            
+    
+    @IBOutlet weak var recipeImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var yieldLabel: UILabel!
+    @IBOutlet weak var totalTimeLabel: UILabel!
+    @IBOutlet weak var ingredientLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
-           super.setSelected(selected, animated: animated)
-
-           // Configure the view for the selected state
-       }
+        super.setSelected(selected, animated: animated)
         
-        
-        // MARK: - Property
-        
-        var recipe: Hit? {
-            didSet {
-                titleLabel.text = recipe?.recipe.label
-                guard let time = recipe?.recipe.totalTime  else {return}
-                totalTimeLabel.text = time.convertIntToTime //?? "NA"
-                guard let yield = recipe?.recipe.yield  else {return}
-                if yield == 0 {
-                    yieldLabel.text = "NA"
-                } else {
-                    yieldLabel.text = "\( yield)"
-                }
-                guard let ingredients = recipe?.recipe.ingredients[0].text else {return}
-                ingredientLabel.text = ingredients
-                guard let image = recipe?.recipe.image else {return}
-                guard let url = URL(string: image) else {return}
-                DispatchQueue.global().async {
-                    let data = try? Data(contentsOf: url)
-                    DispatchQueue.main.async {
-                        self.recipeImageView.image = UIImage(data: data! as Data)
-                    }
+        // Configure the view for the selected state
+    }
+    
+    
+    // MARK: - Property
+    
+    var recipe: Hit? {
+        didSet {
+            titleLabel.text = recipe?.recipe.label
+            guard let time = recipe?.recipe.totalTime  else {return}
+            if time == 0 {
+                totalTimeLabel.text = "NA"
+            } else {
+                
+                totalTimeLabel.text = time.convertIntToTime
+            }
+            guard let yield = recipe?.recipe.yield  else {return}
+            if yield == 0 {
+                yieldLabel.text = "NA"
+            } else {
+                yieldLabel.text = "\( yield)"
+            }
+            guard let ingredients = recipe?.recipe.ingredients[0].text else {return}
+            ingredientLabel.text = ingredients
+            guard let image = recipe?.recipe.image else {return}
+            guard let url = URL(string: image) else {return}
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url)
+                DispatchQueue.main.async {
+                    self.recipeImageView.image = UIImage(data: data! as Data)
                 }
             }
         }
-
-   
+    }
+    var favoriteRecipe: FavoritesRecipesList? {
+        didSet {
+            titleLabel.text = favoriteRecipe?.name
+            guard let yield =  favoriteRecipe?.yield  else {return}
+            if yield == "0" {
+                yieldLabel.text = "NA"
+            } else {
+                yieldLabel.text = "\( yield)"
+            }
+            guard let ingredients = favoriteRecipe?.ingredients else {return}
+            ingredientLabel.text = ingredients
+            if let imageData = favoriteRecipe?.image {
+                recipeImageView.image = UIImage(data: imageData)
+            }
+            guard favoriteRecipe?.totalTime != "0mn" else {
+                totalTimeLabel.text = "NA"
+                return
+            }
+            totalTimeLabel.text = favoriteRecipe?.totalTime
+        }
+    }
+    
     
 }

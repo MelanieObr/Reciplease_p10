@@ -33,26 +33,27 @@ final class CoreDataManager {
     // MARK: - Methods
     
     /// Manage  Favorite Recipes List entities
-    func addRecipeToFavorites(name: String, image: Data, ingredientsDescription: String, recipeUrl: String, time: String) {
+    func addRecipeToFavorites(name: String, image: Data, ingredientsDescription: String, recipeUrl: String, time: String, yield: String) {
         let recipe = FavoritesRecipesList(context: managedObjectContext)
         recipe.image = image
         recipe.ingredients = ingredientsDescription
         recipe.name = name
         recipe.recipeUrl = recipeUrl
         recipe.totalTime = time
+        recipe.yield = yield
         coreDataStack.saveContext()
     }
     
-    /// Delete recipe from favorite list
-    func deleteRecipeFromFavorite(recipeName: String) {
-        let request: NSFetchRequest<FavoritesRecipesList> = FavoritesRecipesList.fetchRequest()
-        let predicate = NSPredicate(format: "name == %@", recipeName)
-        request.predicate = predicate
-        if let objects = try? managedObjectContext.fetch(request) {
-            objects.forEach { managedObjectContext.delete($0)}
-        }
-        coreDataStack.saveContext()
-    }
+    /// Delete recipe from favorite thanks to his name
+       func deleteRecipeFromFavorite(recipeName: String) {
+           let request: NSFetchRequest<FavoritesRecipesList> = FavoritesRecipesList.fetchRequest()
+           let predicate = NSPredicate(format: "name == %@", recipeName)
+           request.predicate = predicate
+           if let objects = try? managedObjectContext.fetch(request) {
+               objects.forEach { managedObjectContext.delete($0)}
+           }
+           coreDataStack.saveContext()
+       }
 
     /// Delete all favorites in list
     func deleteAllFavorites() {

@@ -15,6 +15,9 @@
 		B806970423A0F26A0074D4C0 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B806970223A0F26A0074D4C0 /* RecipeTableViewCell.swift */; };
 		B806970523A0F26A0074D4C0 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B806970323A0F26A0074D4C0 /* RecipeTableViewCell.xib */; };
 		B806970B23A2BD950074D4C0 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B806970A23A2BD950074D4C0 /* DetailRecipeViewController.swift */; };
+		B808D2F123AA29E100CACA84 /* ExtensionInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B808D2F023AA29E000CACA84 /* ExtensionInt.swift */; };
+		B8CFBE4723A8D6A30054442D /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFBE4623A8D6A30054442D /* CoreDataManagerTests.swift */; };
+		B8CFBE4923A8D6EC0054442D /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFBE4823A8D6EC0054442D /* MockCoreDataStack.swift */; };
 		B8ECACCA239FBB160019E982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ECACC9239FBB160019E982 /* AppDelegate.swift */; };
 		B8ECACCC239FBB160019E982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ECACCB239FBB160019E982 /* SceneDelegate.swift */; };
 		B8ECACD1239FBB160019E982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8ECACCF239FBB160019E982 /* Main.storyboard */; };
@@ -60,6 +63,9 @@
 		B806970223A0F26A0074D4C0 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		B806970323A0F26A0074D4C0 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		B806970A23A2BD950074D4C0 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
+		B808D2F023AA29E000CACA84 /* ExtensionInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionInt.swift; sourceTree = "<group>"; };
+		B8CFBE4623A8D6A30054442D /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
+		B8CFBE4823A8D6EC0054442D /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		B8ECACC6239FBB160019E982 /* Reciplease_p10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease_p10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8ECACC9239FBB160019E982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8ECACCB239FBB160019E982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +134,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B8CFBE4523A8D64A0054442D /* CoreDataManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B8CFBE4623A8D6A30054442D /* CoreDataManagerTests.swift */,
+				B8CFBE4823A8D6EC0054442D /* MockCoreDataStack.swift */,
+			);
+			path = CoreDataManagerTests;
+			sourceTree = "<group>";
+		};
 		B8ECACBD239FBB160019E982 = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +178,9 @@
 		B8ECACE2239FBB1C0019E982 /* Reciplease_p10Tests */ = {
 			isa = PBXGroup;
 			children = (
+				B8CFBE4523A8D64A0054442D /* CoreDataManagerTests */,
 				B8ECAD07239FCDF60019E982 /* RecipeServiceTests */,
 				B8ECACE5239FBB1C0019E982 /* Info.plist */,
-				B8ECACE3239FBB1C0019E982 /* Reciplease_p10Tests.swift */,
 			);
 			path = Reciplease_p10Tests;
 			sourceTree = "<group>";
@@ -177,6 +192,7 @@
 				B8ECACF5239FBED10019E982 /* ErrorCases.swift */,
 				B8ECACF7239FBEDD0019E982 /* Time.swift */,
 				B8ECACF9239FBEF50019E982 /* ExtensionString.swift */,
+				B808D2F023AA29E000CACA84 /* ExtensionInt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -232,6 +248,7 @@
 		B8ECAD07239FCDF60019E982 /* RecipeServiceTests */ = {
 			isa = PBXGroup;
 			children = (
+				B8ECACE3239FBB1C0019E982 /* Reciplease_p10Tests.swift */,
 				B8ECAD05239FCCB40019E982 /* FakeResponseData.swift */,
 				B8ECAD08239FCE450019E982 /* SessionFake.swift */,
 				B8ECAD0A239FCE8B0019E982 /* recipe.json */,
@@ -422,6 +439,7 @@
 				B8ECACFA239FBEF50019E982 /* ExtensionString.swift in Sources */,
 				B8ECAD02239FC53B0019E982 /* RecipeService.swift in Sources */,
 				B8ECACCC239FBB160019E982 /* SceneDelegate.swift in Sources */,
+				B808D2F123AA29E100CACA84 /* ExtensionInt.swift in Sources */,
 				B8ECACF6239FBED10019E982 /* ErrorCases.swift in Sources */,
 				B806970123A0F1840074D4C0 /* ListRecipeViewController.swift in Sources */,
 				B8ECACF4239FBEBC0019E982 /* UIViewController.swift in Sources */,
@@ -437,7 +455,9 @@
 			files = (
 				B8ECACE4239FBB1C0019E982 /* Reciplease_p10Tests.swift in Sources */,
 				B8ECAD09239FCE450019E982 /* SessionFake.swift in Sources */,
+				B8CFBE4723A8D6A30054442D /* CoreDataManagerTests.swift in Sources */,
 				B8ECAD06239FCCB40019E982 /* FakeResponseData.swift in Sources */,
+				B8CFBE4923A8D6EC0054442D /* MockCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

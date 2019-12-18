@@ -26,6 +26,7 @@ final class RecipeService {
     /// Method to send request with the API
     func getRecipes(ingredients: [String], callback: @escaping (Result<RecipeSearch, ErrorCases>) -> Void) {
         guard let url = URL(string: "https://api.edamam.com/search?q=\(ingredients.joined(separator: ","))&to=100&app_id=\(ApiConfig.apiId)&app_key=\(ApiConfig.apiKey)") else { return }
+        print(url)
         session.request(with: url) { responseData in
             guard let data = responseData.data else {
                 print ("no data")
