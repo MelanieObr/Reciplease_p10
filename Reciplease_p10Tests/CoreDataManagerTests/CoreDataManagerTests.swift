@@ -32,19 +32,21 @@ final class CoreDataManagerTests: XCTestCase {
     
     // MARK: - Tests
     
+    // test save recipe
     func testAddRecipeToFavoritesMethods_WhenAnEntityIsCreated_ThenShouldBeCorrectlySaved() {
         coreDataManager.addRecipeToFavorites(name: "Chicken Vesuvio", image: Data(), ingredientsDescription: "", recipeUrl: "http://www.recipes.com/recipes/8793/", time: "", yield: "")
         XCTAssertTrue(!coreDataManager.favoritesRecipes.isEmpty)
         XCTAssertTrue(coreDataManager.favoritesRecipes.count == 1)
         XCTAssertTrue(coreDataManager.favoritesRecipes[0].name! == "Chicken Vesuvio")
     }
-    
+    // test delete all recipes
     func testDeleteAllRecipesMethod_WhenEntitiesAreDeleted_ThenShouldBeCorrectlyDeleted() {
         coreDataManager.addRecipeToFavorites(name: "Chicken Vesuvio", image: Data(), ingredientsDescription: "", recipeUrl: "http://www.recipes.com/recipes/8793/", time: "", yield: "")
         coreDataManager.deleteAllFavorites()
         XCTAssertTrue(coreDataManager.favoritesRecipes.isEmpty)
     }
     
+    // test delete one recipe
     func testDeleteOneRecipeMethod_WhenEntityIsDeleted_ThenShouldBeCorrectlyDeleted() {
         coreDataManager.addRecipeToFavorites(name: "Chicken Vesuvio", image: Data(), ingredientsDescription: "", recipeUrl: "http://www.recipes.com/recipes/8793/", time: "", yield: "")
         coreDataManager.addRecipeToFavorites(name: "Strong Cheese", image: Data(), ingredientsDescription: "", recipeUrl: "http://www.recipes.com/recipes/8793/", time: "", yield: "")
@@ -54,6 +56,7 @@ final class CoreDataManagerTests: XCTestCase {
         XCTAssertTrue(coreDataManager.favoritesRecipes[0].name! == "Strong Cheese")
     }
     
+    // test if recipe is already saved
     func testCheckingIfRecipeIsAlreadyFavorite_WhenFuncIsCalling_ThenShouldReturnTrue() {
         coreDataManager.addRecipeToFavorites(name: "Chicken Vesuvio", image: Data(), ingredientsDescription: "", recipeUrl: "http://www.recipes.com/recipes/8793/", time: "", yield: "")
         XCTAssertTrue(coreDataManager.checkIfRecipeIsAlreadyFavorite(recipeName: "Chicken Vesuvio"))
