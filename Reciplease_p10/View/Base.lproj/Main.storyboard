@@ -17,6 +17,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7mt-Rl-LxK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
@@ -55,7 +56,7 @@
         <scene sceneID="iSs-Bj-DGe">
             <objects>
                 <navigationController id="wfs-IN-1nk" userLabel="Search" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-chercher-40" id="dh0-fI-Mew">
+                    <tabBarItem key="tabBarItem" title="" image="search" id="dh0-fI-Mew">
                         <color key="badgeColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="DdE-yF-UC6"/>
@@ -381,7 +382,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygu-yd-Wq6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="298.5"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y5q-4e-nDo">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y5q-4e-nDo">
                                 <rect key="frame" x="10" y="118" width="374" height="30"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yield" translatesAutoresizingMaskIntoConstraints="NO" id="OBV-s6-fZu">
@@ -393,17 +394,17 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmR-KS-xvk">
-                                        <rect key="frame" x="31" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="33" y="0.0" width="341" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-R9-KkX">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-R9-KkX">
                                 <rect key="frame" x="10" y="168" width="374" height="30"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-horloge-50" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-lJ-ooS">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Time" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-lJ-ooS">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -412,7 +413,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEL-kr-1No">
-                                        <rect key="frame" x="31" y="0.0" width="343" height="30"/>
+                                        <rect key="frame" x="33" y="0.0" width="341" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -466,7 +467,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WaA-GS-htj"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" leftItemsSupplementBackButton="YES" id="0IG-dh-o88">
+                    <navigationItem key="navigationItem" title="Reciplease" id="0IG-dh-o88">
                         <barButtonItem key="backBarButtonItem" title="Back" id="JHY-AM-uh5"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="empty_heart" id="7C2-Fa-xVV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -493,13 +494,13 @@
     </scenes>
     <resources>
         <image name="DeleteIcon" width="30" height="30"/>
+        <image name="Time" width="50" height="50"/>
         <image name="empty_heart" width="30" height="30"/>
-        <image name="icons8-chercher-40" width="40" height="40"/>
         <image name="icons8-étoile-40" width="40" height="40"/>
-        <image name="icons8-horloge-50" width="50" height="50"/>
+        <image name="search" width="40" height="40"/>
         <image name="yield" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yar-lf-dPZ"/>
+        <segue reference="iaY-Uj-jAT"/>
     </inferredMetricsTieBreakers>
 </document>

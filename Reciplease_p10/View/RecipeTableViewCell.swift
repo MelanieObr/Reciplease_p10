@@ -77,6 +77,7 @@ class RecipeTableViewCell: UITableViewCell {
                 totalTimeLabel.text = "NA"
                 return
             }
+            
             totalTimeLabel.text = favoriteRecipe?.totalTime
         }
     }

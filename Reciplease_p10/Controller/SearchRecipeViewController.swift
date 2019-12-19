@@ -43,13 +43,17 @@ class SearchRecipeViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func didTapButtonToAddIngredient(_ sender: Any) {
-        guard let ingredient = searchTextField.text else { return alert(message: "add an ingredient")}
+        if searchTextField.text != "" {
+        guard let ingredient = searchTextField.text else { return }
         ingredients.append(ingredient)
         ingredientsTableView.reloadData()
+        } else {
+            alert(message: "write an ingredient and add it")
+        }
     }
     
     @IBAction func didTapGoButton(_ sender: Any) {
-        guard ingredients.count >= 1 else { return }
+        guard ingredients.count >= 1 else { return alert(message: "add an ingredient") }
         loadRecipes()
     }
     
@@ -75,12 +79,10 @@ class SearchRecipeViewController: UIViewController {
                     self.performSegue(withIdentifier: self.identifierSegue, sender: nil)
                 case .failure:
                     self.alert(message:"incorrect request")
-                   
                 }
                self.manageActivityIndicator(activityIndicator: self.searchActivityController, button: self.searchRecipesButton, showActivityIndicator: false)
             }
         }
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

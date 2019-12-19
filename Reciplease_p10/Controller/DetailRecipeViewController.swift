@@ -30,7 +30,6 @@ class DetailRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         manageActivityIndicator(activityIndicator: goActivityIndicator, button: goDirectionButton, showActivityIndicator: false)
-        recipeIngredientsTextView.isEditable = false
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let coreDataStack = appDelegate.coreDataStack
         coreDataManager = CoreDataManager(coreDataStack: coreDataStack)
@@ -51,10 +50,15 @@ extension DetailRecipeViewController {
         recipeTitleLabel.text = recipeDisplay?.label
         recipeImageView.image = UIImage(data: recipeDisplay?.image ?? Data())
         recipeIngredientsTextView.text = recipeDisplay?.ingredientLines
-        totalTimeLabel.text = recipeDisplay?.totalTime
         yieldLabel.text = recipeDisplay?.yield
+         guard recipeDisplay?.totalTime != "0mn" else {
+                       totalTimeLabel.text = "NA"
+                       return
+                   }
+                   totalTimeLabel.text = recipeDisplay?.totalTime
+               }
     }
-}
+
 
 // MARK: - CoreData
 extension DetailRecipeViewController {
