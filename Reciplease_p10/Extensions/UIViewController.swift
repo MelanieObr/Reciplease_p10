@@ -21,6 +21,9 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    func alertAskUser(message: String) {
+        
+    }
     
     /// method called to manage button and activity controller together: true to hide button and show acticity indicator / false to show button and hide activity controller
     func manageActivityIndicator(activityIndicator: UIActivityIndicatorView, button: UIButton, showActivityIndicator: Bool){

@@ -44,12 +44,12 @@ class ListRecipeViewController: UIViewController {
 
 extension ListRecipeViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
+    // configure colums in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // print("***", recipesSearch?.hits.count)
         return recipesSearch?.hits.count ?? 0
     }
-    
+    // configure cell format with RecipeTableViewCell class
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as? RecipeTableViewCell else {
             return UITableViewCell()
@@ -57,10 +57,11 @@ extension ListRecipeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.recipe = recipesSearch?.hits[indexPath.row]
         return cell
     }
+    // configure height of cell
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140 // the height for custom cell 0
+        return 140
     }
-    
+    // cell selected to call in DetailRecipeViewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe = recipesSearch?.hits[indexPath.row]
         guard let imageUrl = recipe?.recipe.image, let ingredientsArray = recipe?.recipe.ingredientLines, let yield = recipe?.recipe.yield?.convertToString(value: recipe?.recipe.yield ?? 0) else {return}

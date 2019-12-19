@@ -47,6 +47,7 @@ final class FavoriteRecipeViewController: UIViewController {
     
     // MARK: - Action
     @IBAction private func didTapClearButton(_ sender: Any) {
+        // ask user if he wants to delete all
          let alertUserDelete = UIAlertController(title: "Delete All ?", message: "Are you sure you want to delete all favorites ?", preferredStyle: .alert)
                let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                     self.coreDataManager?.deleteAllFavorites()
@@ -62,11 +63,13 @@ final class FavoriteRecipeViewController: UIViewController {
 
 
 // MARK: - TableView DataSource
+
 extension FavoriteRecipeViewController: UITableViewDataSource {
+    // configure number of lines in TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coreDataManager?.favoritesRecipes.count ?? 0
     }
-    
+    //configue a cell format in tableView with RecipeTableViewCell file's
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as? RecipeTableViewCell else {
             return UITableViewCell()
@@ -74,40 +77,38 @@ extension FavoriteRecipeViewController: UITableViewDataSource {
         cell.favoriteRecipe = coreDataManager?.favoritesRecipes[indexPath.row]
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favoriteRecipe = coreDataManager?.favoritesRecipes[indexPath.row]
         let recipeDisplay = RecipeDisplay(label: favoriteRecipe?.name, image: favoriteRecipe?.image, url: favoriteRecipe?.recipeUrl, ingredientLines: favoriteRecipe?.ingredients, totalTime: favoriteRecipe?.totalTime, yield: favoriteRecipe?.yield)
             self.recipeDisplay = recipeDisplay
             self.performSegue(withIdentifier: "FavoritesListToDetail", sender: nil)
     }
-   
 }
 
 // MARK: - TableView Delegate
+
 extension FavoriteRecipeViewController: UITableViewDelegate {
 
+    // height of tableView
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return coreDataManager?.favoritesRecipes.isEmpty ?? true ? tableView.bounds.size.height : 0
     }
+    // height of cell
    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 140 // the height for custom cell 0
+       return 140
    }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+    // delete a favorite recipe in tableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard let recipeName = coreDataManager?.favoritesRecipes[indexPath.row].name else {return}
         coreDataManager?.deleteRecipeFromFavorite(recipeName: recipeName)
         favoriteRecipeTableView.reloadData()
-        guard coreDataManager?.favoritesRecipes.isEmpty == true else {
-            navigationItem.rightBarButtonItem = clearButton
-            return
-        }
-        navigationItem.rightBarButtonItem = nil
     }
+    // animation's cell
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let translation = CATransform3DTranslate(CATransform3DIdentity,0,120,0)
         cell.layer.transform = translation

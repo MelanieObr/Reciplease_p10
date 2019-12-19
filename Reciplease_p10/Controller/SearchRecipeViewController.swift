@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchRecipeViewController: UIViewController {
+final class SearchRecipeViewController: UIViewController {
     
     //MARK: - Properties
     
@@ -19,11 +19,12 @@ class SearchRecipeViewController: UIViewController {
     
     //MARK: - Outlets
     
-    @IBOutlet weak var searchTextField: UITextField!
-    @IBOutlet weak var addIngredientButton: UIButton!
-    @IBOutlet weak var ingredientsTableView: UITableView!
-    @IBOutlet weak var searchRecipesButton: UIButton!
-    @IBOutlet weak var searchActivityController: UIActivityIndicatorView!
+    @IBOutlet weak private var searchTextField: UITextField!
+    @IBOutlet weak private var addIngredientButton: UIButton!
+    @IBOutlet weak private var ingredientsTableView: UITableView!
+    @IBOutlet weak private var searchRecipesButton: UIButton!
+    @IBOutlet weak private var searchActivityController: UIActivityIndicatorView!
+    
     //MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -43,14 +44,13 @@ class SearchRecipeViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func didTapButtonToAddIngredient(_ sender: Any) {
-        if searchTextField.text != "" {
-        guard let ingredient = searchTextField.text else { return }
+       guard let ingredient = searchTextField.text, !ingredient.isBlank else {
+        alert(message: "write an ingredient")
+        return}
         ingredients.append(ingredient)
         ingredientsTableView.reloadData()
-        } else {
-            alert(message: "write an ingredient and add it")
+        searchTextField.text = ""
         }
-    }
     
     @IBAction func didTapGoButton(_ sender: Any) {
         guard ingredients.count >= 1 else { return alert(message: "add an ingredient") }
@@ -58,9 +58,21 @@ class SearchRecipeViewController: UIViewController {
     }
     
     @IBAction func didTapClearButton(_ sender: Any) {
-        ingredients.removeAll()
-        ingredientsTableView.reloadData()
-    }
+        // ask user if he wants to delete all ingredients
+        let alertUserDelete = UIAlertController(title: "Delete All ?", message: "Are you sure you want to delete all ingredients ?", preferredStyle: .alert)
+        // if ok delete all
+                      let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                        self.ingredients.removeAll()
+                        self.ingredientsTableView.reloadData()
+                      })
+        // if cancel no deleting
+                      let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+                      }
+                      alertUserDelete.addAction(ok)
+                      alertUserDelete.addAction(cancel)
+                      self.present(alertUserDelete, animated: true, completion: nil)
+                  }
+           
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         searchTextField.resignFirstResponder()
@@ -68,6 +80,7 @@ class SearchRecipeViewController: UIViewController {
     
     //MARK: - Methods
     
+    /// Method to call API and get data
     func loadRecipes() {
         manageActivityIndicator(activityIndicator: searchActivityController, button: searchRecipesButton, showActivityIndicator: true)
         recipesService.getRecipes(ingredients: ingredients) { result in
@@ -92,16 +105,17 @@ class SearchRecipeViewController: UIViewController {
 }
 
 //MARK: - Extension TableView
+
 extension SearchRecipeViewController: UITableViewDataSource {
-    
+    // configure colums in tableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+    //configue lines in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
     }
-    
+    // configure a cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as? IngredientTableViewCell else {
             return UITableViewCell()
@@ -110,4 +124,12 @@ extension SearchRecipeViewController: UITableViewDataSource {
         cell.configure(ingredient: ingredient)
         return cell
     }
+    // delete a row in tableView
+       func tableView(_ tableView: UITableView,
+                      commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+           if editingStyle == .delete {
+               ingredients.remove(at: indexPath.row)
+               tableView.deleteRows(at: [indexPath], with: .fade)
+           }
+       }
 }

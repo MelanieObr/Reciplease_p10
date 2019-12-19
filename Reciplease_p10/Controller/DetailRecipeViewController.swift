@@ -24,8 +24,9 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
-    
     @IBOutlet weak var goActivityIndicator: UIActivityIndicatorView!
+    
+    //MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +52,7 @@ extension DetailRecipeViewController {
         recipeImageView.image = UIImage(data: recipeDisplay?.image ?? Data())
         recipeIngredientsTextView.text = recipeDisplay?.ingredientLines
         yieldLabel.text = recipeDisplay?.yield
-         guard recipeDisplay?.totalTime != "0mn" else {
-                       totalTimeLabel.text = "NA"
-                       return
-                   }
-                   totalTimeLabel.text = recipeDisplay?.totalTime
+        totalTimeLabel.text = recipeDisplay?.totalTime
                }
     }
 

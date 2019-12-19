@@ -34,13 +34,13 @@ class RecipeTableViewCell: UITableViewCell {
     var recipe: Hit? {
         didSet {
             titleLabel.text = recipe?.recipe.label
-            guard let time = recipe?.recipe.totalTime  else {return}
-            if time == 0 {
-                totalTimeLabel.text = "NA"
-            } else {
-                
+//            guard let time = recipe?.recipe.totalTime  else {return}
+//            if time == 0 {
+//                totalTimeLabel.text = "NA"
+//            } else {
+               guard let time = recipe?.recipe.totalTime  else {return}
                 totalTimeLabel.text = time.convertIntToTime
-            }
+//            }
             guard let yield = recipe?.recipe.yield  else {return}
             if yield == 0 {
                 yieldLabel.text = "NA"
@@ -73,13 +73,14 @@ class RecipeTableViewCell: UITableViewCell {
             if let imageData = favoriteRecipe?.image {
                 recipeImageView.image = UIImage(data: imageData)
             }
-            guard favoriteRecipe?.totalTime != "0mn" else {
-                totalTimeLabel.text = "NA"
-                return
-            }
-            
+//            guard favoriteRecipe?.totalTime != "0mn" else {
+//                totalTimeLabel.text = "NA"
+//                return
+//            }
+
             totalTimeLabel.text = favoriteRecipe?.totalTime
-        }
+       }
+        
     }
     
     
