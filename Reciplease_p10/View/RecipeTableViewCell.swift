@@ -18,29 +18,14 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var ingredientLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-    
-    // MARK: - Property
+    // MARK: - Properties
     
     var recipe: Hit? {
         didSet {
             titleLabel.text = recipe?.recipe.label
-//            guard let time = recipe?.recipe.totalTime  else {return}
-//            if time == 0 {
-//                totalTimeLabel.text = "NA"
-//            } else {
-               guard let time = recipe?.recipe.totalTime  else {return}
-                totalTimeLabel.text = time.convertIntToTime
-//            }
+            guard let time = recipe?.recipe.totalTime  else {return}
+            totalTimeLabel.text = time.convertIntToTime
+            //            }
             guard let yield = recipe?.recipe.yield  else {return}
             if yield == 0 {
                 yieldLabel.text = "NA"
@@ -59,6 +44,7 @@ class RecipeTableViewCell: UITableViewCell {
             }
         }
     }
+    
     var favoriteRecipe: FavoritesRecipesList? {
         didSet {
             titleLabel.text = favoriteRecipe?.name
@@ -73,15 +59,16 @@ class RecipeTableViewCell: UITableViewCell {
             if let imageData = favoriteRecipe?.image {
                 recipeImageView.image = UIImage(data: imageData)
             }
-//            guard favoriteRecipe?.totalTime != "0mn" else {
-//                totalTimeLabel.text = "NA"
-//                return
-//            }
-
             totalTimeLabel.text = favoriteRecipe?.totalTime
-       }
-        
+        }
     }
     
+    // MARK: - Methods
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }

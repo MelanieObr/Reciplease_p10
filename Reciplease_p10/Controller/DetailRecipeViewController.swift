@@ -44,23 +44,24 @@ class DetailRecipeViewController: UIViewController {
 }
 
 // MARK: - Method
+
 extension DetailRecipeViewController {
     
-    /// Update the View
+    /// update the View
     private func updateTheView() {
         recipeTitleLabel.text = recipeDisplay?.label
         recipeImageView.image = UIImage(data: recipeDisplay?.image ?? Data())
         recipeIngredientsTextView.text = recipeDisplay?.ingredientLines
         yieldLabel.text = recipeDisplay?.yield
         totalTimeLabel.text = recipeDisplay?.totalTime
-               }
     }
-
+}
 
 // MARK: - CoreData
+
 extension DetailRecipeViewController {
     
-    /// Update the favorite icon
+    /// update the favorite icon
     private func updateTheFavoriteIcon(){
         guard coreDataManager?.checkIfRecipeIsAlreadyFavorite(recipeName: recipeTitleLabel.text ?? "") == true else {
             favoriteButton.image = UIImage(named: "empty_heart")
@@ -68,7 +69,7 @@ extension DetailRecipeViewController {
         favoriteButton.image = UIImage(named: "full_heart")
     }
     
-    /// Adding recipes to coredata
+    /// adding recipes to coredata
     private func addRecipeToFavorites() {
         //            guard let recipeDisplay = recipeDisplay else { return } à revoir + optionnels RecipeDisplay
         guard let name = recipeDisplay?.label, let image = recipeDisplay?.image, let ingredients = recipeDisplay?.ingredientLines, let url = recipeDisplay?.url, let time = recipeDisplay?.totalTime, let yield = recipeDisplay?.yield else {return}
@@ -77,9 +78,10 @@ extension DetailRecipeViewController {
 }
 
 // MARK: - Actions
+
 extension DetailRecipeViewController {
     
-    /// Action after tapped Get Directions Button to open the url of the recipe
+    /// action after tapped Get Directions Button to open the url of the recipe
     @IBAction private func didTapGetDirectionsButton(_ sender: Any) {
         manageActivityIndicator(activityIndicator: goActivityIndicator, button: goDirectionButton, showActivityIndicator: true)
         guard let directionsUrl = URL(string: recipeDisplay?.url ?? "") else {return}
@@ -87,19 +89,19 @@ extension DetailRecipeViewController {
         manageActivityIndicator(activityIndicator: goActivityIndicator, button: goDirectionButton, showActivityIndicator: false)
     }
     
-    /// Action when favorite icon did tapped
-        @IBAction private func didTapFavoriteButton(_ sender: UIBarButtonItem) {
-            if sender.image == UIImage(named: "empty_heart") {
-                sender.image = UIImage(named: "full_heart")
-                alert(message: "Recipe added to your favorites list")
-                addRecipeToFavorites()
-                
-            } else if sender.image == UIImage(named: "full_heart") {
-                sender.image = UIImage(named: "empty_heart")
-                alert(message: "Recipe deleted from your favorites list")
-                coreDataManager?.deleteRecipeFromFavorite(recipeName: recipeDisplay?.label ?? "")
-                
-            }
+    /// action when favorite icon did tapped
+    @IBAction private func didTapFavoriteButton(_ sender: UIBarButtonItem) {
+        // when recipe isn't in favorite list to add it, alert user
+        if sender.image == UIImage(named: "empty_heart") {
+            sender.image = UIImage(named: "full_heart")
+            alert(message: "Recipe added to your favorites list")
+            addRecipeToFavorites()
+         // when recipe is already added infavorite list to delete it, alert user
+        } else if sender.image == UIImage(named: "full_heart") {
+            sender.image = UIImage(named: "empty_heart")
+            alert(message: "Recipe deleted from your favorites list")
+            coreDataManager?.deleteRecipeFromFavorite(recipeName: recipeDisplay?.label ?? "")
         }
+    }
 }
 

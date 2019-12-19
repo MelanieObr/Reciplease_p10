@@ -25,8 +25,7 @@ class ListRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //print("***", recipesSearch)
-         recipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil), forCellReuseIdentifier: "recipeCell")
-        
+        recipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil), forCellReuseIdentifier: "recipeCell")
     }
     
     //MARK: - Configure segue to DetailRecipe controller
@@ -40,7 +39,7 @@ class ListRecipeViewController: UIViewController {
     }
 }
 
-//MARK: - extension TableView
+//MARK: - Extension TableView
 
 extension ListRecipeViewController: UITableViewDelegate, UITableViewDataSource {
     

@@ -30,7 +30,8 @@ final class SearchRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         manageActivityIndicator(activityIndicator: searchActivityController, button: searchRecipesButton, showActivityIndicator: false)
-        
+        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: "tap:")
+        view.addGestureRecognizer(tapGestureReconizer)
     }
     
     //MARK: - Configure segue
@@ -44,13 +45,13 @@ final class SearchRecipeViewController: UIViewController {
     //MARK: - Actions
     
     @IBAction func didTapButtonToAddIngredient(_ sender: Any) {
-       guard let ingredient = searchTextField.text, !ingredient.isBlank else {
-        alert(message: "write an ingredient")
-        return}
+        guard let ingredient = searchTextField.text, !ingredient.isBlank else {
+            alert(message: "write an ingredient")
+            return}
         ingredients.append(ingredient)
         ingredientsTableView.reloadData()
         searchTextField.text = ""
-        }
+    }
     
     @IBAction func didTapGoButton(_ sender: Any) {
         guard ingredients.count >= 1 else { return alert(message: "add an ingredient") }
@@ -61,19 +62,17 @@ final class SearchRecipeViewController: UIViewController {
         // ask user if he wants to delete all ingredients
         let alertUserDelete = UIAlertController(title: "Delete All ?", message: "Are you sure you want to delete all ingredients ?", preferredStyle: .alert)
         // if ok delete all
-                      let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-                        self.ingredients.removeAll()
-                        self.ingredientsTableView.reloadData()
-                      })
-        // if cancel no deleting
-                      let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-                      }
-                      alertUserDelete.addAction(ok)
-                      alertUserDelete.addAction(cancel)
-                      self.present(alertUserDelete, animated: true, completion: nil)
-                  }
-           
-    
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            self.ingredients.removeAll()
+            self.ingredientsTableView.reloadData()
+        })
+        // if cancel no delete all
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+        }
+        alertUserDelete.addAction(ok)
+        alertUserDelete.addAction(cancel)
+        self.present(alertUserDelete, animated: true, completion: nil)
+    }
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         searchTextField.resignFirstResponder()
     }
@@ -88,16 +87,18 @@ final class SearchRecipeViewController: UIViewController {
                 switch result {
                 case.success(let recipes):
                     self.recipesSearch = recipes
-//                    print(recipes) // test
                     self.performSegue(withIdentifier: self.identifierSegue, sender: nil)
                 case .failure:
                     self.alert(message:"incorrect request")
                 }
-               self.manageActivityIndicator(activityIndicator: self.searchActivityController, button: self.searchRecipesButton, showActivityIndicator: false)
+                self.manageActivityIndicator(activityIndicator: self.searchActivityController, button: self.searchRecipesButton, showActivityIndicator: false)
             }
         }
     }
     
+    func tap(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.resignFirstResponder()
         return true
@@ -107,6 +108,7 @@ final class SearchRecipeViewController: UIViewController {
 //MARK: - Extension TableView
 
 extension SearchRecipeViewController: UITableViewDataSource {
+    
     // configure colums in tableView
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -125,11 +127,11 @@ extension SearchRecipeViewController: UITableViewDataSource {
         return cell
     }
     // delete a row in tableView
-       func tableView(_ tableView: UITableView,
-                      commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-           if editingStyle == .delete {
-               ingredients.remove(at: indexPath.row)
-               tableView.deleteRows(at: [indexPath], with: .fade)
-           }
-       }
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            ingredients.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

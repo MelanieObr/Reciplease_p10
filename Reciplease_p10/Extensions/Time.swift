@@ -11,7 +11,8 @@ import Foundation
 // MARK: Extension to convert Int to time in String
 
 extension Int {
-    /// Convert Int to time in type String
+    
+    /// Convert Int to time in String
     var convertIntToTime: String {
         if self == 0 {
             let timeNull = "NA"
