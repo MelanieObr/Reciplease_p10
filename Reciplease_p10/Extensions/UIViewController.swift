@@ -25,12 +25,11 @@ extension UIViewController {
         activityIndicator.isHidden = !showActivityIndicator
         button.isHidden = showActivityIndicator
     }
-}
-     /// method to load data from url
-     func loadImageDataFromUrl(stringImageUrl: String) -> Data{
-         guard let imageUrl = URL(string: stringImageUrl) else {return Data()}
-         guard let data = try? Data(contentsOf: imageUrl) else {return Data()}
-         return data
+    /// method to load data from url
+    func loadImageDataFromUrl(stringImageUrl: String) -> Data{
+        guard let imageUrl = URL(string: stringImageUrl) else {return Data()}
+        guard let data = try? Data(contentsOf: imageUrl) else {return Data()}
+        return data
     }
-
+}
 

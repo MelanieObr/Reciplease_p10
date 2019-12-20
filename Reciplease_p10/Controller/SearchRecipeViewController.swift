@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SearchRecipeViewController: UIViewController {
+final class SearchRecipeViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: - Properties
     
@@ -29,9 +29,11 @@ final class SearchRecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.delegate = self
+        // Dissmiss keyboard when user tap on the view
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
         manageActivityIndicator(activityIndicator: searchActivityController, button: searchRecipesButton, showActivityIndicator: false)
-        let tapGestureReconizer = UITapGestureRecognizer(target: self, action: "tap:")
-        view.addGestureRecognizer(tapGestureReconizer)
     }
     
     //MARK: - Configure segue
@@ -71,12 +73,20 @@ final class SearchRecipeViewController: UIViewController {
         }
         alertUserDelete.addAction(ok)
         alertUserDelete.addAction(cancel)
-        self.present(alertUserDelete, animated: true, completion: nil)
+        present(alertUserDelete, animated: true, completion: nil)
     }
     
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        searchTextField.resignFirstResponder()
+    }
     
     //MARK: - Methods
     
+    // Method to dissmiss keyboard when user tap on "done"
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     /// Method to call API and get data
     func loadRecipes() {
         manageActivityIndicator(activityIndicator: searchActivityController, button: searchRecipesButton, showActivityIndicator: true)
@@ -92,19 +102,6 @@ final class SearchRecipeViewController: UIViewController {
                 self.manageActivityIndicator(activityIndicator: self.searchActivityController, button: self.searchRecipesButton, showActivityIndicator: false)
             }
         }
-    }
-}
-
-//MARK: - Extension TexfieldDelegate
-
-extension SearchRecipeViewController: UITextFieldDelegate {
-    
-    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        searchTextField.resignFirstResponder()
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 

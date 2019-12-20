@@ -22,19 +22,16 @@ class RecipeTableViewCell: UITableViewCell {
     
     var recipe: Hit? {
         didSet {
-            titleLabel.text = recipe?.recipe.label
-            guard let time = recipe?.recipe.totalTime  else {return}
-            totalTimeLabel.text = time.convertIntToTime
-            //            }
-            guard let yield = recipe?.recipe.yield  else {return}
-            if yield == 0 {
+            guard let recipe = recipe else { return }
+            titleLabel.text = recipe.recipe.label
+            totalTimeLabel.text = recipe.recipe.totalTime?.convertIntToTime
+            if recipe.recipe.yield == 0 {
                 yieldLabel.text = "NA"
             } else {
-                yieldLabel.text = "\( yield)"
+                yieldLabel.text = "\(recipe.recipe.yield ?? 0)"
             }
-            guard let ingredients = recipe?.recipe.ingredients[0].text else {return}
-            ingredientLabel.text = ingredients
-            guard let image = recipe?.recipe.image else {return}
+            ingredientLabel.text = recipe.recipe.ingredients[0].text
+            guard let image = recipe.recipe.image else {return}
             guard let url = URL(string: image) else {return}
             DispatchQueue.global().async {
                 let data = try? Data(contentsOf: url)

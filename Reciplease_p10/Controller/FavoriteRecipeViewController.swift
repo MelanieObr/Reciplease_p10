@@ -35,10 +35,6 @@ final class FavoriteRecipeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         favoriteRecipeTableView.reloadData()
-        guard coreDataManager?.favoritesRecipes.count == 0 else {
-            //            navigationItem.rightBarButtonItem = clearButton
-            return
-        }
     }
     
     //MARK: - Segue
@@ -63,7 +59,7 @@ final class FavoriteRecipeViewController: UIViewController {
         }
         alertUserDelete.addAction(ok)
         alertUserDelete.addAction(cancel)
-        self.present(alertUserDelete, animated: true, completion: nil)
+        present(alertUserDelete, animated: true, completion: nil)
     }
 }
 
