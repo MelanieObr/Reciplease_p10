@@ -73,9 +73,7 @@ final class SearchRecipeViewController: UIViewController {
         alertUserDelete.addAction(cancel)
         self.present(alertUserDelete, animated: true, completion: nil)
     }
-    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        searchTextField.resignFirstResponder()
-    }
+    
     
     //MARK: - Methods
     
@@ -95,12 +93,17 @@ final class SearchRecipeViewController: UIViewController {
             }
         }
     }
+}
+
+//MARK: - Extension TexfieldDelegate
+
+extension SearchRecipeViewController: UITextFieldDelegate {
     
-    func tap(sender: UITapGestureRecognizer) {
-        view.endEditing(true)
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        searchTextField.resignFirstResponder()
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        searchTextField.resignFirstResponder()
+        textField.resignFirstResponder()
         return true
     }
 }

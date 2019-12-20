@@ -102,8 +102,9 @@
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lemon, Cheese, Sausages ..." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ShQ-JV-96J">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="46"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardAppearance="alert"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="done"/>
                                                 <connections>
+                                                    <action selector="didTapButtonToAddIngredient:" destination="pnd-2t-N8h" eventType="touchUpInside" id="Elo-ZK-rPj"/>
                                                     <outlet property="delegate" destination="pnd-2t-N8h" id="1lz-I8-R2K"/>
                                                 </connections>
                                             </textField>
