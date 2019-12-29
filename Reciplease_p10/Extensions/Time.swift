@@ -26,7 +26,7 @@ extension Int {
             let timeFormatStringLessTenMin = String(format: "%01dm", minutes)
             if self < 60 {
                 if minutes < 10 {
-                    return timeFormatStringLessTenMin
+                return timeFormatStringLessTenMin
                 }
                 return timeFormatStringMin
             } else if minutes == 0 {
