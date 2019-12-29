@@ -11,7 +11,6 @@ import CoreData
 
 final class CoreDataManager {
     
-
     // MARK: - Properties
     
     private let coreDataStack: CoreDataStack
@@ -45,16 +44,16 @@ final class CoreDataManager {
     }
     
     /// Delete recipe from favorite thanks to his name
-       func deleteRecipeFromFavorite(recipeName: String) {
-           let request: NSFetchRequest<FavoritesRecipesList> = FavoritesRecipesList.fetchRequest()
-           let predicate = NSPredicate(format: "name == %@", recipeName)
-           request.predicate = predicate
-           if let objects = try? managedObjectContext.fetch(request) {
-               objects.forEach { managedObjectContext.delete($0)}
-           }
-           coreDataStack.saveContext()
-       }
-
+    func deleteRecipeFromFavorite(recipeName: String) {
+        let request: NSFetchRequest<FavoritesRecipesList> = FavoritesRecipesList.fetchRequest()
+        let predicate = NSPredicate(format: "name == %@", recipeName)
+        request.predicate = predicate
+        if let objects = try? managedObjectContext.fetch(request) {
+            objects.forEach { managedObjectContext.delete($0)}
+        }
+        coreDataStack.saveContext()
+    }
+    
     /// Delete all favorites in list
     func deleteAllFavorites() {
         favoritesRecipes.forEach { managedObjectContext.delete($0)}

@@ -23,12 +23,20 @@
                                     <constraint firstAttribute="width" constant="180" id="tao-SE-agK"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reciplease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLB-Oh-Jsc">
+                                <rect key="frame" x="133" y="526" width="148" height="32"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Q2-5U-7SI" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ALp-RV-XUo"/>
                             <constraint firstItem="6Q2-5U-7SI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KGg-Rl-O5b"/>
+                            <constraint firstItem="GLB-Oh-Jsc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZON-bZ-S72"/>
+                            <constraint firstItem="GLB-Oh-Jsc" firstAttribute="top" secondItem="6Q2-5U-7SI" secondAttribute="bottom" constant="8" id="d8U-by-Kh0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

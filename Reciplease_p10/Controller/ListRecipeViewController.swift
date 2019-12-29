@@ -23,7 +23,6 @@ class ListRecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //print("***", recipesSearch)
         recipesTableView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil), forCellReuseIdentifier: "recipeCell")
     }
     

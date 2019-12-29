@@ -45,7 +45,6 @@ final class RecipeService {
             }
             callback(.success(responseJSON))
             self.searchData = [responseJSON]
-            
         }
     }
 }

@@ -23,6 +23,6 @@ class IngredientTableViewCell: UITableViewCell {
     /// Method to configure ingredient's cell
     func configure(ingredient: String) {
         ingredientLabel.text = "- \(ingredient)"
-        //ingredientLabel.textColor = .white
+        ingredientLabel.textColor = .white
     }
 }

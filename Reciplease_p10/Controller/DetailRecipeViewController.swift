@@ -24,11 +24,11 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
     @IBOutlet weak var goActivityIndicator: UIActivityIndicatorView!
-
+    
     
     @IBOutlet weak var ingredientDetailTableView: UITableView!
     
-        //MARK: - Life cycle
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         manageActivityIndicator(activityIndicator: goActivityIndicator, button: goDirectionButton, showActivityIndicator: false)
@@ -74,8 +74,8 @@ extension DetailRecipeViewController {
         //            guard let recipeDisplay = recipeDisplay else { return } à revoir + optionnels RecipeDisplay
         guard let name = recipeDisplay?.label, let image = recipeDisplay?.image, let ingredients = recipeDisplay?.ingredients, let url = recipeDisplay?.url, let time = recipeDisplay?.totalTime, let yield = recipeDisplay?.yield else {return}
         coreDataManager?.addRecipeToFavorites(name: name, image: image, ingredientsDescription: ingredients, recipeUrl: url, time: time, yield: yield)
-    
-}
+        
+    }
 }
 
 // MARK: - Actions
@@ -97,7 +97,7 @@ extension DetailRecipeViewController {
             sender.image = UIImage(named: "full_heart")
             alert(message: "Recipe added to your favorites list")
             addRecipeToFavorites()
-         // when recipe is already added infavorite list to delete it, alert user
+            // when recipe is already added infavorite list to delete it, alert user
         } else if sender.image == UIImage(named: "full_heart") {
             sender.image = UIImage(named: "empty_heart")
             alert(message: "Recipe deleted from your favorites list")
@@ -106,29 +106,22 @@ extension DetailRecipeViewController {
     }
 }
 
+//MARK: - TableViewDataSource
+
 extension DetailRecipeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // print(recipeDisplay?.ingredients)
+        // print(recipeDisplay?.ingredients)
         return recipeDisplay?.ingredients.count ?? 0
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsDetailCell", for: indexPath)
-//
-//        guard let recipeDisplay = recipeDisplay else { return UITableViewCell() }
-//
-//        let ingredients = recipeDisplay.ingredients[indexPath.row]
-//        return cell
-
-//    }
-         guard let recipeDisplay = recipeDisplay else { return UITableViewCell() }
+        guard let recipeDisplay = recipeDisplay else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsDetailCell", for: indexPath)
-
         let ingredient = recipeDisplay.ingredients[indexPath.row]
         cell.textLabel?.text = "- \(ingredient)"
-                return cell
-        }
+        return cell
+    }
 }
 
 

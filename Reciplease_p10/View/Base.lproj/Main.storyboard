@@ -146,14 +146,14 @@
                                 <rect key="frame" x="8" y="236" width="398" height="46"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKT-ep-Emq">
-                                        <rect key="frame" x="0.0" y="16" width="314" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <rect key="frame" x="0.0" y="10.5" width="314" height="35.5"/>
+                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZ3-fv-LKh">
                                         <rect key="frame" x="324" y="0.0" width="74" height="46"/>
-                                        <color key="backgroundColor" red="0.84698414799999999" green="0.84710657599999994" blue="0.84695738549999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="rUX-ur-yIN"/>
                                         </constraints>
@@ -185,17 +185,17 @@
                                 <color key="sectionIndexBackgroundColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="IngredientCell" textLabel="4tf-31-ZVZ" style="IBUITableViewCellStyleDefault" id="kHe-c3-x43" customClass="IngredientTableViewCell" customModule="Reciplease_p10" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="354" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="354" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kHe-c3-x43" id="fhU-sK-9IH" customClass="IngredientTableViewCell" customModule="Reciplease_p10" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="354" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4tf-31-ZVZ">
-                                                    <rect key="frame" x="20" y="0.0" width="314" height="60"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4tf-31-ZVZ">
+                                                    <rect key="frame" x="20" y="0.0" width="314" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -290,9 +290,7 @@
                         <viewLayoutGuide key="safeArea" id="Veq-Ma-6UJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="ec2-JS-ntD">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="57j-MR-jRt">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="L78-yn-kKg"/>
                     </navigationItem>
                     <connections>
                         <outlet property="recipesTableView" destination="sBS-hn-P3L" id="4MF-Kp-Wig"/>
@@ -357,13 +355,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygu-yd-Wq6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygu-yd-Wq6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="273"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="273" id="xto-bI-BAz"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y5q-4e-nDo">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y5q-4e-nDo">
                                 <rect key="frame" x="10" y="376" width="33" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yield" translatesAutoresizingMaskIntoConstraints="NO" id="OBV-s6-fZu">
@@ -382,7 +380,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-R9-KkX">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-R9-KkX">
                                 <rect key="frame" x="345.5" y="376" width="58.5" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Time" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-lJ-ooS">
@@ -405,13 +403,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inJ-si-IeR">
-                                <rect key="frame" x="15" y="475" width="384" height="27"/>
+                                <rect key="frame" x="15" y="476" width="384" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SV3-SN-1s1">
-                                <rect key="frame" x="15" y="510" width="384" height="201"/>
+                                <rect key="frame" x="15" y="510.5" width="384" height="200.5"/>
                                 <color key="backgroundColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -461,8 +459,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Title recipe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvl-HB-Ekf">
-                                <rect key="frame" x="141" y="431" width="132.5" height="34"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <rect key="frame" x="15" y="430.5" width="384" height="35.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -474,9 +472,9 @@
                             <constraint firstItem="KbE-On-ssQ" firstAttribute="top" secondItem="SV3-SN-1s1" secondAttribute="bottom" constant="19" id="2nj-9X-QBP"/>
                             <constraint firstAttribute="bottom" secondItem="SV3-SN-1s1" secondAttribute="bottom" constant="185" id="4i9-Nw-Pad"/>
                             <constraint firstItem="Ob1-z3-JCf" firstAttribute="top" secondItem="SV3-SN-1s1" secondAttribute="bottom" constant="15" id="Bmr-Mc-YFx"/>
-                            <constraint firstItem="Dvl-HB-Ekf" firstAttribute="centerX" secondItem="SV3-SN-1s1" secondAttribute="centerX" id="CUe-Ap-QYb"/>
                             <constraint firstItem="SV3-SN-1s1" firstAttribute="leading" secondItem="WaA-GS-htj" secondAttribute="leading" constant="15" id="G8S-Yi-AZc"/>
                             <constraint firstItem="Ob1-z3-JCf" firstAttribute="top" secondItem="SV3-SN-1s1" secondAttribute="bottom" constant="15" id="HKw-48-G6h"/>
+                            <constraint firstItem="WaA-GS-htj" firstAttribute="trailing" secondItem="Dvl-HB-Ekf" secondAttribute="trailing" constant="15" id="I8t-zu-Jg4"/>
                             <constraint firstItem="KbE-On-ssQ" firstAttribute="centerX" secondItem="SV3-SN-1s1" secondAttribute="centerX" id="PXu-Qr-0Me"/>
                             <constraint firstItem="SV3-SN-1s1" firstAttribute="leading" secondItem="WaA-GS-htj" secondAttribute="leading" constant="15" id="RQy-Yf-VpE"/>
                             <constraint firstItem="ygu-yd-Wq6" firstAttribute="top" secondItem="WaA-GS-htj" secondAttribute="top" id="RuW-vg-eGM"/>
@@ -484,6 +482,7 @@
                             <constraint firstItem="WaA-GS-htj" firstAttribute="bottom" secondItem="KbE-On-ssQ" secondAttribute="bottom" constant="30" id="ZLs-fc-ZTn"/>
                             <constraint firstItem="ygu-yd-Wq6" firstAttribute="centerX" secondItem="KbE-On-ssQ" secondAttribute="centerX" id="aR9-27-MDb"/>
                             <constraint firstItem="SV3-SN-1s1" firstAttribute="top" secondItem="inJ-si-IeR" secondAttribute="bottom" constant="8" symbolic="YES" id="eFR-ck-iH4"/>
+                            <constraint firstItem="Dvl-HB-Ekf" firstAttribute="leading" secondItem="WaA-GS-htj" secondAttribute="leading" constant="15" id="har-DB-GRC"/>
                             <constraint firstItem="WaA-GS-htj" firstAttribute="trailing" secondItem="SV3-SN-1s1" secondAttribute="trailing" constant="15" id="hdI-gD-mJs"/>
                             <constraint firstItem="inJ-si-IeR" firstAttribute="top" secondItem="Dvl-HB-Ekf" secondAttribute="bottom" constant="10" id="hmW-fq-jgQ"/>
                             <constraint firstItem="SV3-SN-1s1" firstAttribute="top" secondItem="inJ-si-IeR" secondAttribute="bottom" constant="8" id="kFV-pn-b29"/>
@@ -534,6 +533,6 @@
         <image name="yield" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iaY-Uj-jAT"/>
+        <segue reference="yar-lf-dPZ"/>
     </inferredMetricsTieBreakers>
 </document>
