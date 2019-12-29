@@ -16,12 +16,12 @@
 		B806970523A0F26A0074D4C0 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B806970323A0F26A0074D4C0 /* RecipeTableViewCell.xib */; };
 		B806970B23A2BD950074D4C0 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B806970A23A2BD950074D4C0 /* DetailRecipeViewController.swift */; };
 		B808D2F123AA29E100CACA84 /* ExtensionInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B808D2F023AA29E000CACA84 /* ExtensionInt.swift */; };
+		B8ADF6EA23B267AD00E52B89 /* Reciplease_p10.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8ADF6E823B267AD00E52B89 /* Reciplease_p10.xcdatamodeld */; };
 		B8CFBE4723A8D6A30054442D /* CoreDataManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFBE4623A8D6A30054442D /* CoreDataManagerTests.swift */; };
 		B8CFBE4923A8D6EC0054442D /* MockCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFBE4823A8D6EC0054442D /* MockCoreDataStack.swift */; };
 		B8ECACCA239FBB160019E982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ECACC9239FBB160019E982 /* AppDelegate.swift */; };
 		B8ECACCC239FBB160019E982 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ECACCB239FBB160019E982 /* SceneDelegate.swift */; };
 		B8ECACD1239FBB160019E982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8ECACCF239FBB160019E982 /* Main.storyboard */; };
-		B8ECACD4239FBB160019E982 /* Reciplease_p10.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8ECACD2239FBB160019E982 /* Reciplease_p10.xcdatamodeld */; };
 		B8ECACD6239FBB1C0019E982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8ECACD5239FBB1C0019E982 /* Assets.xcassets */; };
 		B8ECACD9239FBB1C0019E982 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8ECACD7239FBB1C0019E982 /* LaunchScreen.storyboard */; };
 		B8ECACE4239FBB1C0019E982 /* Reciplease_p10Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ECACE3239FBB1C0019E982 /* Reciplease_p10Tests.swift */; };
@@ -64,13 +64,13 @@
 		B806970323A0F26A0074D4C0 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		B806970A23A2BD950074D4C0 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		B808D2F023AA29E000CACA84 /* ExtensionInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionInt.swift; sourceTree = "<group>"; };
+		B8ADF6E923B267AD00E52B89 /* Reciplease_p10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease_p10.xcdatamodel; sourceTree = "<group>"; };
 		B8CFBE4623A8D6A30054442D /* CoreDataManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTests.swift; sourceTree = "<group>"; };
 		B8CFBE4823A8D6EC0054442D /* MockCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataStack.swift; sourceTree = "<group>"; };
 		B8ECACC6239FBB160019E982 /* Reciplease_p10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease_p10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8ECACC9239FBB160019E982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8ECACCB239FBB160019E982 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B8ECACD0239FBB160019E982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B8ECACD3239FBB160019E982 /* Reciplease_p10.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease_p10.xcdatamodel; sourceTree = "<group>"; };
 		B8ECACD5239FBB1C0019E982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8ECACD8239FBB1C0019E982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8ECACDA239FBB1C0019E982 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		B8ECACF1239FBE4B0019E982 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B8ECACD2239FBB160019E982 /* Reciplease_p10.xcdatamodeld */,
+				B8ADF6E823B267AD00E52B89 /* Reciplease_p10.xcdatamodeld */,
 				B8ECACFB239FC4CC0019E982 /* ApiConfig.swift */,
 				B8ECACFF239FC5250019E982 /* RecipeSession.swift */,
 				B8ECAD01239FC53B0019E982 /* RecipeService.swift */,
@@ -426,7 +426,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8ECACD4239FBB160019E982 /* Reciplease_p10.xcdatamodeld in Sources */,
 				B80696FB23A0D7BE0074D4C0 /* SearchRecipeViewController.swift in Sources */,
 				B8ECACF8239FBEDD0019E982 /* Time.swift in Sources */,
 				B8F9FCB723A4F0FC00015F7F /* CoreDataManager.swift in Sources */,
@@ -439,6 +438,7 @@
 				B8ECACFA239FBEF50019E982 /* ExtensionString.swift in Sources */,
 				B8ECAD02239FC53B0019E982 /* RecipeService.swift in Sources */,
 				B8ECACCC239FBB160019E982 /* SceneDelegate.swift in Sources */,
+				B8ADF6EA23B267AD00E52B89 /* Reciplease_p10.xcdatamodeld in Sources */,
 				B808D2F123AA29E100CACA84 /* ExtensionInt.swift in Sources */,
 				B8ECACF6239FBED10019E982 /* ErrorCases.swift in Sources */,
 				B806970123A0F1840074D4C0 /* ListRecipeViewController.swift in Sources */,
@@ -722,12 +722,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B8ECACD2239FBB160019E982 /* Reciplease_p10.xcdatamodeld */ = {
+		B8ADF6E823B267AD00E52B89 /* Reciplease_p10.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B8ECACD3239FBB160019E982 /* Reciplease_p10.xcdatamodel */,
+				B8ADF6E923B267AD00E52B89 /* Reciplease_p10.xcdatamodel */,
 			);
-			currentVersion = B8ECACD3239FBB160019E982 /* Reciplease_p10.xcdatamodel */;
+			currentVersion = B8ADF6E923B267AD00E52B89 /* Reciplease_p10.xcdatamodel */;
 			path = Reciplease_p10.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

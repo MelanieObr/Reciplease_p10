@@ -19,15 +19,16 @@ class DetailRecipeViewController: UIViewController {
     
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeTitleLabel: UILabel!
-    @IBOutlet weak var recipeIngredientsTextView: UITextView!
     @IBOutlet weak var goDirectionButton: UIButton!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
     @IBOutlet weak var goActivityIndicator: UIActivityIndicatorView!
+
     
-    //MARK: - Life cycle
+    @IBOutlet weak var ingredientDetailTableView: UITableView!
     
+        //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         manageActivityIndicator(activityIndicator: goActivityIndicator, button: goDirectionButton, showActivityIndicator: false)
@@ -51,7 +52,6 @@ extension DetailRecipeViewController {
     private func updateTheView() {
         recipeTitleLabel.text = recipeDisplay?.label
         recipeImageView.image = UIImage(data: recipeDisplay?.image ?? Data())
-        recipeIngredientsTextView.text = recipeDisplay?.ingredientLines
         yieldLabel.text = recipeDisplay?.yield
         totalTimeLabel.text = recipeDisplay?.totalTime
     }
@@ -72,9 +72,10 @@ extension DetailRecipeViewController {
     /// adding recipes to coredata
     private func addRecipeToFavorites() {
         //            guard let recipeDisplay = recipeDisplay else { return } à revoir + optionnels RecipeDisplay
-        guard let name = recipeDisplay?.label, let image = recipeDisplay?.image, let ingredients = recipeDisplay?.ingredientLines, let url = recipeDisplay?.url, let time = recipeDisplay?.totalTime, let yield = recipeDisplay?.yield else {return}
+        guard let name = recipeDisplay?.label, let image = recipeDisplay?.image, let ingredients = recipeDisplay?.ingredients, let url = recipeDisplay?.url, let time = recipeDisplay?.totalTime, let yield = recipeDisplay?.yield else {return}
         coreDataManager?.addRecipeToFavorites(name: name, image: image, ingredientsDescription: ingredients, recipeUrl: url, time: time, yield: yield)
-    }
+    
+}
 }
 
 // MARK: - Actions
@@ -104,4 +105,31 @@ extension DetailRecipeViewController {
         }
     }
 }
+
+extension DetailRecipeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       // print(recipeDisplay?.ingredients)
+        return recipeDisplay?.ingredients.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsDetailCell", for: indexPath)
+//
+//        guard let recipeDisplay = recipeDisplay else { return UITableViewCell() }
+//
+//        let ingredients = recipeDisplay.ingredients[indexPath.row]
+//        return cell
+
+//    }
+         guard let recipeDisplay = recipeDisplay else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsDetailCell", for: indexPath)
+
+        let ingredient = recipeDisplay.ingredients[indexPath.row]
+        cell.textLabel?.text = "- \(ingredient)"
+                return cell
+        }
+}
+
+
 

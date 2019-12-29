@@ -33,7 +33,7 @@ final class CoreDataManager {
     // MARK: - Methods
     
     /// Manage  Favorite Recipes List entities
-    func addRecipeToFavorites(name: String, image: Data, ingredientsDescription: String, recipeUrl: String, time: String, yield: String) {
+    func addRecipeToFavorites(name: String, image: Data, ingredientsDescription: [String], recipeUrl: String, time: String, yield: String) {
         let recipe = FavoritesRecipesList(context: managedObjectContext)
         recipe.image = image
         recipe.ingredients = ingredientsDescription

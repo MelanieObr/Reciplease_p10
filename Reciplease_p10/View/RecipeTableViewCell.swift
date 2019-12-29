@@ -51,8 +51,8 @@ class RecipeTableViewCell: UITableViewCell {
             } else {
                 yieldLabel.text = "\( yield)"
             }
-            guard let ingredients = favoriteRecipe?.ingredients else {return}
-            ingredientLabel.text = ingredients
+            guard let ingredient = favoriteRecipe?.ingredients?.joined(separator: ",") else {return}
+            ingredientLabel.text = "\(ingredient)"
             if let imageData = favoriteRecipe?.image {
                 recipeImageView.image = UIImage(data: imageData)
             }

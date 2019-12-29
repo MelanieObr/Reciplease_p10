@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ListRecipeViewController: UIViewController {
     
     //MARK: - Properties
@@ -63,8 +62,8 @@ extension ListRecipeViewController: UITableViewDelegate, UITableViewDataSource {
     // cell selected to call in DetailRecipeViewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe = recipesSearch?.hits[indexPath.row]
-        guard let imageUrl = recipe?.recipe.image, let ingredientsArray = recipe?.recipe.ingredientLines, let yield = recipe?.recipe.yield?.convertToString(value: recipe?.recipe.yield ?? 0) else {return}
-        let recipeDisplay = RecipeDisplay(label: recipe?.recipe.label ?? "", image: loadImageDataFromUrl(stringImageUrl: imageUrl), url: recipe?.recipe.url ?? "", ingredientLines: "-" + " " + ingredientsArray.joined(separator: "\n\n" + "-" + " "), totalTime: recipe?.recipe.totalTime?.convertIntToTime ?? "", yield: yield)
+        guard let imageUrl = recipe?.recipe.image, let yield = recipe?.recipe.yield?.convertToString(value: recipe?.recipe.yield ?? 0) else {return}
+        let recipeDisplay = RecipeDisplay(label: recipe?.recipe.label ?? "", image: loadImageDataFromUrl(stringImageUrl: imageUrl), url: recipe?.recipe.url ?? "", ingredients: recipe?.recipe.ingredientLines ?? [], totalTime: recipe?.recipe.totalTime?.convertIntToTime ?? "", yield: yield)
         self.recipeDisplay = recipeDisplay
         performSegue(withIdentifier:"DetailRecipe", sender: nil)
     }
