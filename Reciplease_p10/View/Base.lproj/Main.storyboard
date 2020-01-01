@@ -355,13 +355,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ygu-yd-Wq6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ygu-yd-Wq6">
                                 <rect key="frame" x="0.0" y="88" width="414" height="273"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="273" id="xto-bI-BAz"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y5q-4e-nDo">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y5q-4e-nDo">
                                 <rect key="frame" x="10" y="376" width="33" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yield" translatesAutoresizingMaskIntoConstraints="NO" id="OBV-s6-fZu">
@@ -380,7 +380,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-R9-KkX">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZXr-R9-KkX">
                                 <rect key="frame" x="345.5" y="376" width="58.5" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Time" translatesAutoresizingMaskIntoConstraints="NO" id="OP6-lJ-ooS">
@@ -403,13 +403,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inJ-si-IeR">
-                                <rect key="frame" x="15" y="476" width="384" height="26.5"/>
+                                <rect key="frame" x="15" y="485" width="384" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SV3-SN-1s1">
-                                <rect key="frame" x="15" y="510.5" width="384" height="200.5"/>
+                                <rect key="frame" x="15" y="519.5" width="384" height="191.5"/>
                                 <color key="backgroundColor" red="0.21554118389999999" green="0.2000231743" blue="0.19590187070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -425,7 +425,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="384" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yjq-uJ-S5j">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yjq-uJ-S5j">
                                                     <rect key="frame" x="20" y="0.0" width="344" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
@@ -459,7 +459,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="Title recipe" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvl-HB-Ekf">
-                                <rect key="frame" x="15" y="430.5" width="384" height="35.5"/>
+                                <rect key="frame" x="15" y="421" width="384" height="54"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -488,7 +488,7 @@
                             <constraint firstItem="SV3-SN-1s1" firstAttribute="top" secondItem="inJ-si-IeR" secondAttribute="bottom" constant="8" id="kFV-pn-b29"/>
                             <constraint firstItem="Y5q-4e-nDo" firstAttribute="leading" secondItem="WaA-GS-htj" secondAttribute="leading" constant="10" id="lpB-t5-BEu"/>
                             <constraint firstItem="ygu-yd-Wq6" firstAttribute="centerX" secondItem="inJ-si-IeR" secondAttribute="centerX" id="oKN-KC-cPw"/>
-                            <constraint firstItem="Dvl-HB-Ekf" firstAttribute="top" relation="lessThanOrEqual" secondItem="ZXr-R9-KkX" secondAttribute="bottom" constant="35" id="oUx-FX-VPK"/>
+                            <constraint firstItem="Dvl-HB-Ekf" firstAttribute="top" secondItem="ZXr-R9-KkX" secondAttribute="bottom" constant="25" id="oUx-FX-VPK"/>
                             <constraint firstItem="ygu-yd-Wq6" firstAttribute="centerX" secondItem="Ob1-z3-JCf" secondAttribute="centerX" id="qOF-Ku-0Yo"/>
                             <constraint firstAttribute="trailing" secondItem="ygu-yd-Wq6" secondAttribute="trailing" id="t7N-X3-h2v"/>
                             <constraint firstItem="Y5q-4e-nDo" firstAttribute="top" secondItem="ygu-yd-Wq6" secondAttribute="bottom" constant="15" id="tLV-kd-e0V"/>
