@@ -71,7 +71,6 @@ extension DetailRecipeViewController {
     
     /// adding recipes to coredata
     private func addRecipeToFavorites() {
-        //            guard let recipeDisplay = recipeDisplay else { return } à revoir + optionnels RecipeDisplay
         guard let name = recipeDisplay?.label, let image = recipeDisplay?.image, let ingredients = recipeDisplay?.ingredients, let url = recipeDisplay?.url, let time = recipeDisplay?.totalTime, let yield = recipeDisplay?.yield else {return}
         coreDataManager?.addRecipeToFavorites(name: name, image: image, ingredientsDescription: ingredients, recipeUrl: url, time: time, yield: yield)
         
@@ -97,7 +96,7 @@ extension DetailRecipeViewController {
             sender.image = UIImage(named: "full_heart")
             alert(message: "Recipe added to your favorites list")
             addRecipeToFavorites()
-            // when recipe is already added infavorite list to delete it, alert user
+            // when recipe is already added in favorite list to delete it, alert user
         } else if sender.image == UIImage(named: "full_heart") {
             sender.image = UIImage(named: "empty_heart")
             alert(message: "Recipe deleted from your favorites list")
@@ -111,7 +110,6 @@ extension DetailRecipeViewController {
 extension DetailRecipeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // print(recipeDisplay?.ingredients)
         return recipeDisplay?.ingredients.count ?? 0
     }
     

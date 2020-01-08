@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListRecipeViewController: UIViewController {
+final class ListRecipeViewController: UIViewController {
     
     //MARK: - Properties
     
@@ -43,7 +43,6 @@ extension ListRecipeViewController: UITableViewDelegate, UITableViewDataSource {
     
     // configure colums in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // print("***", recipesSearch?.hits.count)
         return recipesSearch?.hits.count ?? 0
     }
     // configure cell format with RecipeTableViewCell class

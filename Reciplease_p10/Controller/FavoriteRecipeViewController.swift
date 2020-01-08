@@ -84,7 +84,7 @@ extension FavoriteRecipeViewController: UITableViewDataSource {
         let favoriteRecipe = coreDataManager?.favoritesRecipes[indexPath.row]
         let recipeDisplay = RecipeDisplay(label: favoriteRecipe?.name ?? "", image: favoriteRecipe?.image, url: favoriteRecipe?.recipeUrl ?? "", ingredients: favoriteRecipe?.ingredients ?? [""], totalTime: favoriteRecipe?.totalTime, yield: favoriteRecipe?.yield)
         self.recipeDisplay = recipeDisplay
-        self.performSegue(withIdentifier: "FavoritesListToDetail", sender: nil)
+        performSegue(withIdentifier: "FavoritesListToDetail", sender: nil)
     }
 }
 

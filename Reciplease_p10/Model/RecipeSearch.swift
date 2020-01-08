@@ -11,6 +11,7 @@ import Foundation
 
 //MARK: - Structures to manage data
 
+
 //MARK: - RecipesSearch
 
 struct RecipeSearch: Decodable {

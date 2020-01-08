@@ -109,10 +109,6 @@ final class SearchRecipeViewController: UIViewController, UITextFieldDelegate {
 
 extension SearchRecipeViewController: UITableViewDataSource {
     
-    // configure colums in tableView
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     //configue lines in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
