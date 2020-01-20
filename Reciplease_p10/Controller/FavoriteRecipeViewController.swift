@@ -91,7 +91,6 @@ extension FavoriteRecipeViewController: UITableViewDataSource {
 //MARK: - TableView Delegate
 
 extension FavoriteRecipeViewController: UITableViewDelegate {
-    
     // tableView's height
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return coreDataManager?.favoritesRecipes.isEmpty ?? true ? tableView.bounds.size.height : 0
@@ -100,6 +99,7 @@ extension FavoriteRecipeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
     // asks data source to verify that the given row is editable
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true

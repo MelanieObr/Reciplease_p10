@@ -17,14 +17,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fridge" translatesAutoresizingMaskIntoConstraints="NO" id="6Q2-5U-7SI">
-                                <rect key="frame" x="117" y="378" width="180" height="140"/>
+                                <rect key="frame" x="117" y="393" width="180" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="Azc-xa-UT1"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="110" id="Azc-xa-UT1"/>
                                     <constraint firstAttribute="width" constant="180" id="tao-SE-agK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reciplease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLB-Oh-Jsc">
-                                <rect key="frame" x="133" y="526" width="148" height="32"/>
+                                <rect key="frame" x="133" y="511" width="148" height="32"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
