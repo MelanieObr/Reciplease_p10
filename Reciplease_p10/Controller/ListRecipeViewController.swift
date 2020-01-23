@@ -41,7 +41,7 @@ final class ListRecipeViewController: UIViewController {
 
 extension ListRecipeViewController: UITableViewDelegate, UITableViewDataSource {
     
-    // configure colums in tableView
+    // configure lines in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipesSearch?.hits.count ?? 0
     }
@@ -62,7 +62,7 @@ extension ListRecipeViewController: UITableViewDelegate, UITableViewDataSource {
            label.textColor = .darkGray
            return label
        }
-    //
+    // configure height for footer in section
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return recipesSearch?.hits.isEmpty ?? true ? 200 : 0
        }

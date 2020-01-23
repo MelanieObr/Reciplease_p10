@@ -24,8 +24,6 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var yieldLabel: UILabel!
     @IBOutlet weak var goActivityIndicator: UIActivityIndicatorView!
-    
-    
     @IBOutlet weak var ingredientDetailTableView: UITableView!
     
     //MARK: - Life cycle
@@ -108,11 +106,11 @@ extension DetailRecipeViewController {
 //MARK: - TableViewDataSource
 
 extension DetailRecipeViewController: UITableViewDataSource {
-    
+    // configure number of lines in TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipeDisplay?.ingredients.count ?? 0
     }
-    
+    // configure cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let recipeDisplay = recipeDisplay else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientsDetailCell", for: indexPath)

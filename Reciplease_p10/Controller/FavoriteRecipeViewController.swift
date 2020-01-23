@@ -79,7 +79,7 @@ extension FavoriteRecipeViewController: UITableViewDataSource {
         cell.favoriteRecipe = coreDataManager?.favoritesRecipes[indexPath.row]
         return cell
     }
-    
+    // cell selected to call 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favoriteRecipe = coreDataManager?.favoritesRecipes[indexPath.row]
         let recipeDisplay = RecipeDisplay(label: favoriteRecipe?.name ?? "", image: favoriteRecipe?.image, url: favoriteRecipe?.recipeUrl ?? "", ingredients: favoriteRecipe?.ingredients ?? [""], totalTime: favoriteRecipe?.totalTime, yield: favoriteRecipe?.yield)
