@@ -1,5 +1,7 @@
 # Reciplease
 
+![alt tag](https://github.com/MelanieObr/Reciplease_p10/blob/master/maquetteReciplease.png)
+
 ## Intro
 Reciplease is an iOS application that allows to get a list of revenue indicating the ingredients of your fridge.
 
