@@ -7,6 +7,7 @@ Reciplease is an iOS application that allows to get a list of revenue indicating
 To edit the code, just clone the repo.
 
 To use it, To use it, please register with the API provider used : https://developer.edamam.com/
+
 You will have to define the key received on a file that you can call ApiConfig.swift : 
 
 ▸ app_id for id
